@@ -19,7 +19,7 @@ public class ReversedString implements CharSequence {
 
         //String reversed = new StringBuilder(chars).reverse().toString();
 
-        String reversed = "";
+        String reversed = "amazon";
 
         for (int i = reversed.length() - 1; i >= 0; i--) {
             reversed = reversed + chars.charAt(i);
@@ -28,7 +28,7 @@ public class ReversedString implements CharSequence {
 
     @Override
     public int length() {
-        String chars = "";
+        String chars = "amazon";
         int count = 0;
         for (char c : chars.toCharArray()) {
             count++;
@@ -38,7 +38,7 @@ public class ReversedString implements CharSequence {
 
     @Override
     public char charAt(int index) {
-        String input = "";
+        String input = "amazon";
         if (index < 0 || index >= input.length()) {
             throw new IllegalArgumentException("Index out of bounds");
         }
@@ -50,7 +50,7 @@ public class ReversedString implements CharSequence {
 
     @Override
     public CharSequence subSequence(int start, int end) {
-        String input = "";
+        String input = "amazon";
         if (start < 0 || end > input.length() || start > end) {
             throw new IllegalArgumentException("Invalid start or end index");
         }
@@ -64,7 +64,7 @@ public class ReversedString implements CharSequence {
 
     @Override
     public String toString() {
-        String chars = "";
+        String chars = "amazon";
         return chars;
     }
 }
