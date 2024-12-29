@@ -7,6 +7,8 @@ package com.amazon.ata.interfaces;
  */
 public class ReversedString implements CharSequence {
 
+    private String chars;
+
     /**
      * Implement this constructor during the interfaces prework.
      *
@@ -17,18 +19,22 @@ public class ReversedString implements CharSequence {
             throw new IllegalArgumentException("Input cannot be null or empty");
         }
 
-        //String reversed = new StringBuilder(chars).reverse().toString();
+        // String reversed = new StringBuilder(chars).reverse().toString();
 
-        String reversed = "amazon";
+        this.chars = chars;
 
-        for (int i = reversed.length() - 1; i >= 0; i--) {
+        // String reversed = "nozama";
+
+        String reversed = "";
+
+        for (int i = chars.length() - 1; i >= 0; i--) {
             reversed = reversed + chars.charAt(i);
         }
     }
 
     @Override
     public int length() {
-        String chars = "amazon";
+        //String chars = "nozama";
         int count = 0;
         for (char c : chars.toCharArray()) {
             count++;
@@ -38,33 +44,35 @@ public class ReversedString implements CharSequence {
 
     @Override
     public char charAt(int index) {
-        String input = "amazon";
-        if (index < 0 || index >= input.length()) {
+        // String input = "nozama";
+        if (index < 0 || index >= chars.length()) {
             throw new IllegalArgumentException("Index out of bounds");
         }
-        char[] chars = input.toCharArray();
-        return chars[index];
+        char[] charsReversed = chars.toCharArray();
+        return charsReversed[index];
         //return -1;  // return -1 if the character was not found
 
     }
 
     @Override
     public CharSequence subSequence(int start, int end) {
-        String input = "amazon";
-        if (start < 0 || end > input.length() || start > end) {
+        //String input = "nozama";
+        if (start < 0 || end > chars.length() || start > end) {
             throw new IllegalArgumentException("Invalid start or end index");
         }
-        char[] chars = input.toCharArray();
+
+        char[] charsReversed = chars.toCharArray();
+
         StringBuilder sb = new StringBuilder();
         for (int i = start; i < end; i++) {
-            sb.append(chars[i]);
+            sb.append(charsReversed[i]);
         }
         return sb.toString();
     }
 
     @Override
     public String toString() {
-        String chars = "amazon";
+        //String chars = "nozama";
         return chars;
     }
 }
